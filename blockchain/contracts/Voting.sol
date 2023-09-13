@@ -1,3 +1,4 @@
+import '@openzeppelin/contracts/proxy/utils/initializable.sol';
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.9;
 
@@ -20,9 +21,10 @@ contract Voting {
     address public owner;
     address public ec;
 
-    constructor() {
+    function _initialize()public initialize{
         owner = msg.sender;
-    }
+        }
+    
 
     //modifier to check if is ec
     modifier isEC() {
